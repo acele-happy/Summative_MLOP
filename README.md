@@ -6,18 +6,7 @@ The offline evaluation lives in `notebook/flora_vision.ipynb`. The deployed mode
 
 ## Video demo
 
-Record an unlisted YouTube walkthrough and paste the link here before you submit:
-
-**YouTube:** _add your link_
-
-Suggested 6-minute cut:
-
-1. Open the notebook and show the test accuracy, macro-F1, and confusion matrix.
-2. Open the dashboard and point at the uptime pill.
-3. Upload one flower photograph and read the species, the probabilities, and the hue / brightness / edge sentence.
-4. Scroll the three feature charts and read one interpretation aloud.
-5. Upload a batch of images, show the retrain trigger turning on, press **Retrain model**, and show the new version.
-6. Show the Locust table below: latency at 1, 2, and 3 containers.
+[https://youtu.be/BKk-BvyJdx4](https://youtu.be/BKk-BvyJdx4)
 
 ## Live URL
 
