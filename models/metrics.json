@@ -1,0 +1,509 @@
+{
+  "estimator": "gradient_boosting",
+  "version": 1,
+  "trained_at": "2026-11-26T09:09:10+00:00",
+  "train_rows": 2000,
+  "cv": [
+    {
+      "model": "logistic_regression",
+      "accuracy": {
+        "mean": 0.56,
+        "std": 0.0154
+      },
+      "precision_macro": {
+        "mean": 0.5597,
+        "std": 0.0167
+      },
+      "recall_macro": {
+        "mean": 0.56,
+        "std": 0.0154
+      },
+      "f1_macro": {
+        "mean": 0.5563,
+        "std": 0.0152
+      },
+      "cv_f1_macro_mean": 0.5563
+    },
+    {
+      "model": "random_forest",
+      "accuracy": {
+        "mean": 0.5975,
+        "std": 0.0175
+      },
+      "precision_macro": {
+        "mean": 0.5965,
+        "std": 0.0173
+      },
+      "recall_macro": {
+        "mean": 0.5975,
+        "std": 0.0175
+      },
+      "f1_macro": {
+        "mean": 0.5945,
+        "std": 0.0179
+      },
+      "cv_f1_macro_mean": 0.5945
+    },
+    {
+      "model": "gradient_boosting",
+      "accuracy": {
+        "mean": 0.5975,
+        "std": 0.0195
+      },
+      "precision_macro": {
+        "mean": 0.5952,
+        "std": 0.0207
+      },
+      "recall_macro": {
+        "mean": 0.5975,
+        "std": 0.0195
+      },
+      "f1_macro": {
+        "mean": 0.5949,
+        "std": 0.0207
+      },
+      "cv_f1_macro_mean": 0.5949
+    }
+  ],
+  "test": {
+    "accuracy": 0.625,
+    "precision_macro": 0.6246,
+    "recall_macro": 0.625,
+    "f1_macro": 0.6239,
+    "precision_weighted": 0.6246,
+    "recall_weighted": 0.625,
+    "f1_weighted": 0.6239,
+    "roc_auc_ovr_weighted": 0.89,
+    "per_class": {
+      "daisy": {
+        "precision": 0.6222,
+        "recall": 0.7,
+        "f1": 0.6588,
+        "support": 40
+      },
+      "dandelion": {
+        "precision": 0.55,
+        "recall": 0.55,
+        "f1": 0.55,
+        "support": 40
+      },
+      "roses": {
+        "precision": 0.5946,
+        "recall": 0.55,
+        "f1": 0.5714,
+        "support": 40
+      },
+      "sunflowers": {
+        "precision": 0.7073,
+        "recall": 0.725,
+        "f1": 0.716,
+        "support": 40
+      },
+      "tulips": {
+        "precision": 0.6486,
+        "recall": 0.6,
+        "f1": 0.6234,
+        "support": 40
+      }
+    },
+    "confusion_matrix": [
+      [
+        28,
+        10,
+        1,
+        1,
+        0
+      ],
+      [
+        10,
+        22,
+        3,
+        5,
+        0
+      ],
+      [
+        1,
+        4,
+        22,
+        3,
+        10
+      ],
+      [
+        4,
+        4,
+        0,
+        29,
+        3
+      ],
+      [
+        2,
+        0,
+        11,
+        3,
+        24
+      ]
+    ],
+    "classes": [
+      "daisy",
+      "dandelion",
+      "roses",
+      "sunflowers",
+      "tulips"
+    ],
+    "support": 200
+  },
+  "feature_importances": {
+    "mean_r": 0.0024,
+    "mean_g": 0.0031,
+    "mean_b": 0.0058,
+    "std_luma": 0.0246,
+    "brightness": 0.0056,
+    "saturation": 0.0034,
+    "hue_sin": 0.0145,
+    "hue_cos": 0.0144,
+    "edge_density": 0.0368,
+    "green_ratio": 0.0231,
+    "yellow_ratio": 0.1334,
+    "red_ratio": 0.136,
+    "colorfulness": 0.0822,
+    "center_edge_ratio": 0.0242,
+    "cell_00_r": 0.0056,
+    "cell_00_g": 0.0071,
+    "cell_00_b": 0.014,
+    "cell_01_r": 0.0019,
+    "cell_01_g": 0.0047,
+    "cell_01_b": 0.0099,
+    "cell_02_r": 0.0053,
+    "cell_02_g": 0.0058,
+    "cell_02_b": 0.0022,
+    "cell_03_r": 0.0021,
+    "cell_03_g": 0.0015,
+    "cell_03_b": 0.0079,
+    "cell_04_r": 0.0065,
+    "cell_04_g": 0.0062,
+    "cell_04_b": 0.0044,
+    "cell_05_r": 0.0152,
+    "cell_05_g": 0.011,
+    "cell_05_b": 0.0133,
+    "cell_06_r": 0.0161,
+    "cell_06_g": 0.0148,
+    "cell_06_b": 0.0091,
+    "cell_07_r": 0.0044,
+    "cell_07_g": 0.0039,
+    "cell_07_b": 0.0057,
+    "cell_08_r": 0.0015,
+    "cell_08_g": 0.0069,
+    "cell_08_b": 0.0039,
+    "cell_09_r": 0.0091,
+    "cell_09_g": 0.0075,
+    "cell_09_b": 0.0086,
+    "cell_10_r": 0.0107,
+    "cell_10_g": 0.0124,
+    "cell_10_b": 0.0098,
+    "cell_11_r": 0.0031,
+    "cell_11_g": 0.0036,
+    "cell_11_b": 0.0066,
+    "cell_12_r": 0.0037,
+    "cell_12_g": 0.0029,
+    "cell_12_b": 0.0056,
+    "cell_13_r": 0.0078,
+    "cell_13_g": 0.0048,
+    "cell_13_b": 0.0047,
+    "cell_14_r": 0.0072,
+    "cell_14_g": 0.0036,
+    "cell_14_b": 0.0039,
+    "cell_15_r": 0.0035,
+    "cell_15_g": 0.0042,
+    "cell_15_b": 0.0151,
+    "hue_bin_0": 0.0105,
+    "hue_bin_1": 0.0123,
+    "hue_bin_2": 0.0145,
+    "hue_bin_3": 0.0096,
+    "hue_bin_4": 0.0264,
+    "hue_bin_5": 0.0056,
+    "hue_bin_6": 0.0088,
+    "hue_bin_7": 0.0737
+  },
+  "classes": [
+    "daisy",
+    "dandelion",
+    "roses",
+    "sunflowers",
+    "tulips"
+  ],
+  "comparison": [
+    {
+      "model": "logistic_regression",
+      "selected": false,
+      "test": {
+        "accuracy": 0.6,
+        "precision_macro": 0.5967,
+        "recall_macro": 0.6,
+        "f1_macro": 0.5962,
+        "precision_weighted": 0.5967,
+        "recall_weighted": 0.6,
+        "f1_weighted": 0.5962,
+        "roc_auc_ovr_weighted": 0.8615,
+        "per_class": {
+          "daisy": {
+            "precision": 0.625,
+            "recall": 0.625,
+            "f1": 0.625,
+            "support": 40
+          },
+          "dandelion": {
+            "precision": 0.5263,
+            "recall": 0.5,
+            "f1": 0.5128,
+            "support": 40
+          },
+          "roses": {
+            "precision": 0.5789,
+            "recall": 0.55,
+            "f1": 0.5641,
+            "support": 40
+          },
+          "sunflowers": {
+            "precision": 0.6531,
+            "recall": 0.8,
+            "f1": 0.7191,
+            "support": 40
+          },
+          "tulips": {
+            "precision": 0.6,
+            "recall": 0.525,
+            "f1": 0.56,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            25,
+            8,
+            2,
+            5,
+            0
+          ],
+          [
+            8,
+            20,
+            2,
+            6,
+            4
+          ],
+          [
+            3,
+            5,
+            22,
+            3,
+            7
+          ],
+          [
+            1,
+            4,
+            0,
+            32,
+            3
+          ],
+          [
+            3,
+            1,
+            12,
+            3,
+            21
+          ]
+        ],
+        "classes": [
+          "daisy",
+          "dandelion",
+          "roses",
+          "sunflowers",
+          "tulips"
+        ],
+        "support": 200
+      }
+    },
+    {
+      "model": "random_forest",
+      "selected": false,
+      "test": {
+        "accuracy": 0.625,
+        "precision_macro": 0.627,
+        "recall_macro": 0.625,
+        "f1_macro": 0.6245,
+        "precision_weighted": 0.627,
+        "recall_weighted": 0.625,
+        "f1_weighted": 0.6245,
+        "roc_auc_ovr_weighted": 0.8953,
+        "per_class": {
+          "daisy": {
+            "precision": 0.5476,
+            "recall": 0.575,
+            "f1": 0.561,
+            "support": 40
+          },
+          "dandelion": {
+            "precision": 0.561,
+            "recall": 0.575,
+            "f1": 0.5679,
+            "support": 40
+          },
+          "roses": {
+            "precision": 0.5854,
+            "recall": 0.6,
+            "f1": 0.5926,
+            "support": 40
+          },
+          "sunflowers": {
+            "precision": 0.7442,
+            "recall": 0.8,
+            "f1": 0.7711,
+            "support": 40
+          },
+          "tulips": {
+            "precision": 0.697,
+            "recall": 0.575,
+            "f1": 0.6301,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            23,
+            13,
+            2,
+            2,
+            0
+          ],
+          [
+            10,
+            23,
+            3,
+            4,
+            0
+          ],
+          [
+            3,
+            3,
+            24,
+            2,
+            8
+          ],
+          [
+            3,
+            2,
+            1,
+            32,
+            2
+          ],
+          [
+            3,
+            0,
+            11,
+            3,
+            23
+          ]
+        ],
+        "classes": [
+          "daisy",
+          "dandelion",
+          "roses",
+          "sunflowers",
+          "tulips"
+        ],
+        "support": 200
+      }
+    },
+    {
+      "model": "gradient_boosting",
+      "selected": true,
+      "test": {
+        "accuracy": 0.625,
+        "precision_macro": 0.6246,
+        "recall_macro": 0.625,
+        "f1_macro": 0.6239,
+        "precision_weighted": 0.6246,
+        "recall_weighted": 0.625,
+        "f1_weighted": 0.6239,
+        "roc_auc_ovr_weighted": 0.89,
+        "per_class": {
+          "daisy": {
+            "precision": 0.6222,
+            "recall": 0.7,
+            "f1": 0.6588,
+            "support": 40
+          },
+          "dandelion": {
+            "precision": 0.55,
+            "recall": 0.55,
+            "f1": 0.55,
+            "support": 40
+          },
+          "roses": {
+            "precision": 0.5946,
+            "recall": 0.55,
+            "f1": 0.5714,
+            "support": 40
+          },
+          "sunflowers": {
+            "precision": 0.7073,
+            "recall": 0.725,
+            "f1": 0.716,
+            "support": 40
+          },
+          "tulips": {
+            "precision": 0.6486,
+            "recall": 0.6,
+            "f1": 0.6234,
+            "support": 40
+          }
+        },
+        "confusion_matrix": [
+          [
+            28,
+            10,
+            1,
+            1,
+            0
+          ],
+          [
+            10,
+            22,
+            3,
+            5,
+            0
+          ],
+          [
+            1,
+            4,
+            22,
+            3,
+            10
+          ],
+          [
+            4,
+            4,
+            0,
+            29,
+            3
+          ],
+          [
+            2,
+            0,
+            11,
+            3,
+            24
+          ]
+        ],
+        "classes": [
+          "daisy",
+          "dandelion",
+          "roses",
+          "sunflowers",
+          "tulips"
+        ],
+        "support": 200
+      }
+    }
+  ]
+}

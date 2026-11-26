@@ -1,0 +1,23 @@
+{
+  "overview": "These readings come from 2200 flower photographs (2000 for training and 200 held out for testing) across daisy, dandelion, rose, sunflower, and tulip. Sunflower leads the three headline measurements: it is the closest to yellow, the brightest, and the most finely textured. No one of those measurements is a species label. Flowers that share a color still differ in brightness and in how broken-up the edges are, and the model uses that combination.",
+  "features": [
+    {
+      "id": "hue",
+      "title": "Hue",
+      "image": "hue.png",
+      "text": "Hue is the color angle of pixels saturated enough to have a stable color, so a pale background does not drag the average toward a random angle. Sunflower is closest to yellow, at 60\u00b0 (yellow). Rose is closest to red, at 31\u00b0 (orange). The shorter turn between those two averages is 29\u00b0. Sunflower also has the highest share of clearly yellow pixels (22%). Species that land near each other on this wheel cannot be separated by hue alone."
+    },
+    {
+      "id": "brightness",
+      "title": "Brightness and saturation",
+      "image": "brightness_saturation.png",
+      "text": "Brightness is the average value channel. Saturation is how far the color sits from gray. Sunflower is the brightest species (0.56) and daisy is the darkest (0.47), a clear gap of 0.09. Sunflower is the most saturated (0.60) and daisy the least (0.43). In this sample the bright, saturated frames belong to sunflower, while daisy stays darker and closer to gray. Brightness still depends on the camera, so it supports hue rather than replacing it."
+    },
+    {
+      "id": "edge",
+      "title": "Edge density",
+      "image": "edge_density.png",
+      "text": "Edge density is the average strength of local brightness changes after the photo is resized to 128 pixels. Sunflower has the finest texture (0.069) and dandelion the smoothest (0.049), a clear gap of 0.020. The finer species breaks the frame into smaller light-dark changes. The smoother species fills the frame with broader patches. That gap is available to the model when two species share a hue."
+    }
+  ]
+}
