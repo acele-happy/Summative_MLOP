@@ -21,11 +21,8 @@ Suggested 6-minute cut:
 
 ## Live URL
 
-The service is packaged for [Render](https://render.com) or [Railway](https://railway.com). This workspace does not deploy it, because that needs your cloud login. After you deploy, paste the HTTPS URL here:
+[https://summative-mlop-i3nh.onrender.com](https://summative-mlop-i3nh.onrender.com)
 
-**URL:** _add your URL after deployment_
-
-Until then, run it locally at `http://127.0.0.1:8000`. The load-test entrypoint is `http://127.0.0.1:8080`.
 
 ## Setup
 
