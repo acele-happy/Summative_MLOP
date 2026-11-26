@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: floravision
+    runtime: docker
+    dockerfilePath: deploy/Dockerfile
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: AUTO_RETRAIN
+        value: "0"
