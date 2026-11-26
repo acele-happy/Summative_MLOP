@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FloraVision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark" aria-hidden="true"></span>
+      <div>
+        <p class="eyebrow">Image classification pipeline</p>
+        <h1>FloraVision</h1>
+      </div>
+    </div>
+    <div id="live-pill" class="pill">Checking the model</div>
+  </header>
+
+  <main>
+    <section class="metrics" id="metric-row" aria-label="Service status">
+      <article class="stat"><p>Uptime</p><strong id="uptime">—</strong></article>
+      <article class="stat"><p>Model</p><strong id="model-line">—</strong></article>
+      <article class="stat"><p>Test macro-F1</p><strong id="f1">—</strong></article>
+      <article class="stat"><p>Requests</p><strong id="requests">—</strong></article>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>What the photographs contain</h2>
+        <p id="story-overview">Loading the feature story…</p>
+      </div>
+      <div id="story-grid" class="story-grid"></div>
+    </section>
+
+    <section class="split">
+      <div class="panel">
+        <h2>Predict one photograph</h2>
+        <p class="lede">Upload a single flower image. The service measures hue, brightness, and texture, then returns a species.</p>
+        <form id="predict-form">
+          <label class="drop" for="predict-file">
+            <input id="predict-file" name="file" type="file" accept="image/*" required>
+            <span id="drop-label">Choose an image</span>
+          </label>
+          <button class="primary" type="submit">Predict</button>
+        </form>
+        <div class="examples" id="examples"></div>
+        <div id="predict-result" class="result empty">The prediction will appear here.</div>
+      </div>
+
+      <div class="panel" id="retrain-panel">
+        <h2>Add data and retrain</h2>
+        <p class="lede">Upload many labeled photographs. When enough new data arrives, or the colors drift, the retrain trigger turns on. The button fits the deployed algorithm again.</p>
+        <form id="upload-form">
+          <label for="label">Species folder</label>
+          <select id="label" name="label"></select>
+          <label class="drop" for="bulk-files">
+            <input id="bulk-files" name="files" type="file" accept="image/*" multiple required>
+            <span id="bulk-label">Choose images for this species</span>
+          </label>
+          <button class="primary" type="submit">Upload batch</button>
+        </form>
+        <form id="zip-form">
+          <label class="drop" for="zip-file">
+            <input id="zip-file" type="file" accept=".zip,application/zip" required>
+            <span>Or a zip whose folders are named daisy, dandelion, roses, sunflowers, tulips</span>
+          </label>
+          <button type="submit">Upload zip</button>
+        </form>
+        <div id="pending" class="pending"></div>
+        <p id="trigger-copy" class="trigger-copy"></p>
+        <button id="retrain-btn" class="retrain" type="button">Retrain model</button>
+        <label class="force"><input id="force" type="checkbox"> Accept the new model even if test F1 falls</label>
+        <div id="retrain-result" class="result empty">Retrain progress will appear here.</div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="section-head">
+        <h2>Evaluation on the running service</h2>
+        <p>This scores the model loaded in this process against the held-out test photographs. It is the same test the notebook reports, run here in production.</p>
+      </div>
+      <button id="eval-btn" class="primary" type="button">Run production evaluation</button>
+      <div id="eval-result" class="eval-wrap"></div>
+      <img id="confusion" alt="Confusion matrix" src="/static/charts/confusion.png">
+    </section>
+  </main>
+
+  <footer>
+    <p>FloraVision serves <span id="feature-count">14</span> image measurements from <code>models/flora_vision.pkl</code>.</p>
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
