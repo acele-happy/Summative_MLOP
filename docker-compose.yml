@@ -1,0 +1,42 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    image: floravision-api
+    environment:
+      PYTHONUNBUFFERED: "1"
+      AUTO_RETRAIN: "0"
+    volumes:
+      - ./models:/app/models
+      - ./data:/app/data
+      - ./ui/static/charts:/app/ui/static/charts
+    expose:
+      - "8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=3)",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 25s
+
+  lb:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.lb
+    image: floravision-lb
+    ports:
+      - "8080:8080"
+    environment:
+      BACKEND_HOST: api
+      BACKEND_PORT: "8000"
+      LISTEN_PORT: "8080"
+    depends_on:
+      api:
+        condition: service_healthy
